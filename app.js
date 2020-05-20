@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
@@ -49,7 +47,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 //PORT
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8080;
 
 //Starting a server
 app.listen(port, () => {
