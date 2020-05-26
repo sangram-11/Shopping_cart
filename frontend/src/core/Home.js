@@ -12,13 +12,17 @@ const Home = () => {
   const [error, setError] = useState(false);
 
   const loadAllProduct = () => {
-    getProducts().then(data => {
-      if (data.error) {
-        setError(data.error);
-      } else {
-        setProducts(data);
-      }
-    });
+    try {
+      getProducts().then(data => {
+        if (!data.error) {
+          setProducts(data);
+        } else {
+          setError(data.error);
+        }
+      });
+    } catch (error) {
+      console.log("Unable to get products from db", error);
+    }
   };
 
   useEffect(() => {
