@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const path = require("path");
+app.use(cors());
 
 // My Routes
 
@@ -31,7 +32,6 @@ mongoose
 //Middlewares
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(cors());
 
 //My Routes
 app.use("/api", authRoutes);
