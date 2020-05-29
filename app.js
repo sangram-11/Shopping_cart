@@ -27,6 +27,9 @@ mongoose
   })
   .then(() => {
     console.log("DB CONNECTED");
+  })
+  .catch(err => {
+    console.log("Database connection Error..", err);
   });
 
 //Middlewares
